@@ -1,0 +1,91 @@
+.active-folder.folder {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.file-explorer {
+  min-width: 465px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.5s, visibility 0.2s, opacity 0.2s;
+  transition: transform 0.5s, visibility 0.2s, opacity 0.2s;
+  -webkit-transform-origin: left right;
+  transform-origin: left right;
+}
+.folder {
+  border-radius: 10px;
+  position: absolute;
+  left: 110px;
+  top: 0;
+  box-shadow: 2rem 2rem 3rem rgba(0,0,0, 0.2);
+}
+.folder:not(.in-focus){
+  opacity: 0.25;
+  z-index: 1;
+  // left: 130px;
+}
+.folder.in-focus{
+  opacity: 1;
+  z-index: 999;
+}
+.folder-panel {
+  background: #d2cece;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: -1px;
+}
+.folder-close {
+  background: url("/images/sprite.png") no-repeat -23px 0;
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  margin-top: -9px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+.folder-title {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 12px;
+  color: #6b6a6b;
+  position: relative;
+  padding-left: 23px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.2;
+  font-weight: bold;
+  text-shadow: none;
+}
+.folder-title:before {
+  background: url(/images/sprite.png) no-repeat 0 0;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  z-index: 1;
+  content: "";
+  width: 18px;
+  height: 15px;
+}
+.folder-inner {
+  background: #ffffff;
+  padding: 2rem 2rem;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.folder-inner .icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.folder-inner .icon-title{
+  color: #6b6a6b;
+  text-shadow: none;
+}

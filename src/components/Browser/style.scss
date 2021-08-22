@@ -1,0 +1,67 @@
+.browser-wrap {
+  position: absolute;
+  width: 65%;
+  left: 50%;
+  transform: translate(-50%, -107px);
+  border-radius: 10px 10px 0 0;
+  &:not(.in-focus){
+    opacity: 0.25;
+    z-index: 1;
+  }
+  &.in-focus{
+    opacity: 1;
+    z-index: 999;
+  }
+}
+.load-desktop .browser {
+  opacity: 1;
+  visibility: visible;
+}
+.browser {
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 4rem 4rem 5rem rgba(0,0,0, 0.2);
+  position: relative;
+  right: 0;
+  display: none;
+}
+.website {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: 600px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+.browser-panel {
+  background: #d2cece;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: -1px;
+}
+.browser-close {
+  background: url("/images/sprite.png") no-repeat -23px 0;
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  margin-top: -9px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+.browser-title {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 12px;
+  color: #6b6a6b;
+  position: relative;
+  padding-left: 23px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.2;
+  font-weight: bold;
+  text-shadow: none;
+}
