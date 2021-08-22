@@ -30,10 +30,6 @@ export default function Desktop(){
         {icon: webpageImg, title: "Class Component Lifecycle", onClick: () => openLifecycle("Class Component Lifecycle")},
         {icon: webpageImg, title: "Keys and List", onClick: () => openLifecycle("Keys and List")},
     ]},
-    // {title: 'Music 1', content: [{icon: musicImg, title:"Music 4"}, {icon: alarmImg, title:"Alarm"}]},
-    // {title: 'Music 2', content: [{icon: musicImg, title:"Music 5"}, {icon: alarmImg, title:"Alarm"}]},
-    // {title: 'Music 3', content: [{icon: musicImg, title:"Music 6"}, {icon: alarmImg, title:"Alarm"}]},
-    // {title: 'Music 4', content: [{icon: musicImg, title:"Music 8"}, {icon: alarmImg, title:"Alarm"}]}
   ]
   const [folders, setFolders] = useState(folderList.map(x => ({...x, isOpened: false})));
 
