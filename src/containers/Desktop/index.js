@@ -12,7 +12,8 @@ const defaultQueryParams = 'fontsize=14&hidenavigation=1&theme=light&view=previe
 const webpages = [
   {title: 'Class Component Lifecycle', url:`https://codesandbox.io/embed/react-grid-layout-react-lifecycle-rhk5y?${defaultQueryParams}`},
   {title: 'Keys and List', url:`https://codesandbox.io/embed/react-list-and-keys-f4xzd?${defaultQueryParams}`},
-  {title: 'Clojure Increment', url:`https://codesandbox.io/embed/react-clojure-task-dgvvy?${defaultQueryParams}`}
+  {title: 'Clojure Increment', url:`https://codesandbox.io/embed/react-clojure-task-dgvvy?${defaultQueryParams}`},
+  {title: 'Reconciliation', url:`https://codesandbox.io/embed/react-reconciliation-kwzfx?${defaultQueryParams}`}
 ]
 
 export default function Desktop(){
@@ -36,6 +37,7 @@ export default function Desktop(){
     ]},
     {title: 'React Basics', content: [
       {icon: webpageImg, title: "Keys and List", onClick: () => openPage("Keys and List")},
+      {icon: webpageImg, title: "Reconciliation", onClick: () => openPage("Reconciliation")},
     ]}
   ]
   const [folders, setFolders] = useState(folderList.map(x => ({...x, isOpened: false})));
