@@ -7,29 +7,36 @@ import FolderVisibilityContext from 'providers/FolderVisibility/FolderVisibility
 import './styles.scss';
 import Browser from 'components/Browser';
 
+const defaultQueryParams = 'fontsize=14&hidenavigation=1&theme=light&view=preview&autoresize=1&moduleview=0';
+
 const webpages = [
-  {title: 'Class Component Lifecycle', url:'https://codesandbox.io/embed/react-grid-layout-react-lifecycle-rhk5y?fontsize=14&hidenavigation=1&theme=light&view=preview&autoresize=1&moduleview=0'},
-  {title: 'Keys and List', url:'https://codesandbox.io/embed/react-list-and-keys-f4xzd?fontsize=14&hidenavigation=1&theme=light&view=preview&autoresize=1&moduleview=0'}
+  {title: 'Class Component Lifecycle', url:`https://codesandbox.io/embed/react-grid-layout-react-lifecycle-rhk5y?${defaultQueryParams}`},
+  {title: 'Keys and List', url:`https://codesandbox.io/embed/react-list-and-keys-f4xzd?${defaultQueryParams}`},
+  {title: 'Clojure Increment', url:`https://codesandbox.io/embed/react-clojure-task-dgvvy?${defaultQueryParams}`}
 ]
 
 export default function Desktop(){
+  
   const [page, setPage] = useState({});
+  
   const {setLastOpened} = useContext(FolderVisibilityContext);
 
-
-  const openLifecycle = (title) => {
+  const openPage = (title) => {
     const page = webpages.find(x => x.title === title);
     if(page){
-      setLastOpened(page.title)
+      setLastOpened(page.title);
       setPage(page);
     }
   }
 
   const folderList = [
-    {title: 'React', content: [
-        {icon: webpageImg, title: "Class Component Lifecycle", onClick: () => openLifecycle("Class Component Lifecycle")},
-        {icon: webpageImg, title: "Keys and List", onClick: () => openLifecycle("Keys and List")},
+    {title: 'React Tasks', content: [
+        {icon: webpageImg, title: "Class Component Lifecycle", onClick: () => openPage("Class Component Lifecycle")},
+        {icon: webpageImg, title: "Clojure Increment", onClick: () => openPage("Clojure Increment")},
     ]},
+    {title: 'React Basics', content: [
+      {icon: webpageImg, title: "Keys and List", onClick: () => openPage("Keys and List")},
+    ]}
   ]
   const [folders, setFolders] = useState(folderList.map(x => ({...x, isOpened: false})));
 
@@ -47,7 +54,6 @@ export default function Desktop(){
   return <div className="desktop">
           <div className="column-list">
             {folders.map(x=> {
-              // const folder = x.find;
               return <div key={x.title} style={{position:'relative'}}>
                       <Icon icon={folderImg} title={x.title} onClick={openFolder}/>
                       <FolderContent title={x.title} content={x.content} isOpened={x.isOpened} onClose={closeFolder} />
